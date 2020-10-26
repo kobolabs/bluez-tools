@@ -622,7 +622,7 @@ int main(int argc, char *argv[])
         g_print("  Connected: %d\n", device_get_connected(device, NULL));
         g_print("  UUIDs: [");
         const gchar **uuids = device_get_uuids(device, NULL);
-        for (int j = 0; uuids[j] != NULL; j++)
+        for (int j = 0; uuids && uuids[j] != NULL; j++)
         {
             if (j > 0) g_print(", ");
             g_print("%s", uuid2name(uuids[j]));
