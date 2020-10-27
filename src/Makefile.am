@@ -1,4 +1,5 @@
-AM_CPPFLAGS = $(GLIB_CFLAGS) $(GIO_CFLAGS)
+AM_CPPFLAGS = $(GLIB_CFLAGS) $(GIO_CFLAGS) -fdata-sections -ffunction-sections
+AM_LDFLAGS = -dead-strip -Wl,--gc-sections
 LDADD = $(GLIB_LIBS) $(GIO_LIBS)
 
 bluez_sources =	lib/bluez/adapter.c lib/bluez/adapter.h \
